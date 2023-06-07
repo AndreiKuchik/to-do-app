@@ -1,0 +1,44 @@
+.toDoForm{
+    background-color: #ffffff;
+    padding: 1rem;
+    margin: 1rem auto;
+    width: 50rem;
+    max-width: 95%;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 0 1px 8px rgba(0, 0, 0, 0.25);
+}
+
+.newToDoControls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-bottom: 1rem;
+  text-align: left;
+}
+
+.newToDoControl input {
+  color: #a3a5b2;
+  font: inherit;
+  padding: 0.5rem;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  width: 40rem;
+  max-width: 100%;
+}
+
+.newToDoActions {
+  text-align: right;
+}
+
+.newToDoActions button {
+    font: inherit;
+    cursor: pointer;
+    padding: 0.5rem;
+    border: 1px #373537;
+    background-color: #a3a5b2;
+    color: white;
+    border-radius: 12px;
+    margin-right: 1rem;
+  }
+

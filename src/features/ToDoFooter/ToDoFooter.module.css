@@ -1,0 +1,27 @@
+.footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5rem;
+    background-color: #a3a5b2;
+}
+
+.footer span {
+    padding: 0.2rem;
+    font-size: small;
+    color: #a3a5b2;
+    border-radius: 1rem;
+    border: 1px #373537;
+    background-color: white;
+}
+
+.completeAllButton {
+    cursor: pointer;
+    padding: 0.2rem;
+    border: 1px #373537;
+    background-color: white;
+    color: #a3a5b2;
+    border-radius: 1rem;
+    margin-right: 1rem;
+  }
+  
