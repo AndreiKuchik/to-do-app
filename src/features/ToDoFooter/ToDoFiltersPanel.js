@@ -1,10 +1,10 @@
-import React from "react";
-import styles from "./ToDoFiltersPanel.module.css";
-import { changeFilter } from "../toDoListSlice";
-import { Filters } from "../../app/filtersEnum";
-import { useDispatch } from "react-redux";
+import React from 'react';
+import { useDispatch } from 'react-redux';
+import styles from './ToDoFiltersPanel.module.css';
+import { changeFilter } from '../toDoListSlice';
+import Filters from '../../app/filtersEnum';
 
-export const ToDoFiltersPanel = () => {
+const ToDoFiltersPanel = () => {
   const dispatch = useDispatch();
 
   return (
@@ -33,3 +33,5 @@ export const ToDoFiltersPanel = () => {
     </div>
   );
 };
+
+export default ToDoFiltersPanel;

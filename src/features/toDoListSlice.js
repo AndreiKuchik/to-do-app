@@ -1,6 +1,7 @@
+/* eslint-disable no-param-reassign */
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
-import { repository } from '../repository/localeStorageRepository';
-import { Filters } from '../app/filtersEnum';
+import repository from '../repository/localeStorageRepository';
+import Filters from '../app/filtersEnum';
 
 const initialState = {
   toDoList: [],

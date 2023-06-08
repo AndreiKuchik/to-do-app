@@ -1,20 +1,21 @@
-import { useSelector, useDispatch } from "react-redux";
-import React, { useEffect } from "react";
-import { DragDropContext, Droppable } from "react-beautiful-dnd";
-import { Card } from "../../components/Card";
-import { ToDoItem } from "./ToDoItem";
-import { ToDoFooter } from "../ToDoFooter/ToDoFooter";
-import { selectToDoList, fetchToDoList, reorderList } from "../toDoListSlice";
+import { useSelector, useDispatch } from 'react-redux';
+import React, { useEffect } from 'react';
+import { DragDropContext, Droppable } from 'react-beautiful-dnd';
+import Card from '../../components/Card';
 
-import styles from "./ToDoList.module.css";
+import ToDoFooter from '../ToDoFooter/ToDoFooter';
+import { selectToDoList, fetchToDoList, reorderList } from '../toDoListSlice';
 
-export const ToDoList = () => {
+import styles from './ToDoList.module.css';
+import ToDoItem from './ToDoItem';
+
+const ToDoList = () => {
   const dispatch = useDispatch();
   const toDoList = useSelector(selectToDoList);
   const status = useSelector((state) => state.toDoList.status);
 
   useEffect(() => {
-    if (status === "idle") {
+    if (status === 'idle') {
       dispatch(fetchToDoList());
     }
   }, [status, dispatch]);
@@ -22,10 +23,10 @@ export const ToDoList = () => {
   const onDragEnd = (result) => {
     const dragElementId = toDoList[result.source.index].id;
     const dropElementId = toDoList[result.destination.index].id;
-    let dragAndDropAction ={
-      dragElementId: dragElementId,
-      dropElementId: dropElementId
-    }
+    const dragAndDropAction = {
+      dragElementId,
+      dropElementId,
+    };
     dispatch(reorderList(dragAndDropAction));
   };
 
@@ -56,3 +57,5 @@ export const ToDoList = () => {
     </Card>
   );
 };
+
+export default ToDoList;

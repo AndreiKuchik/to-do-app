@@ -1,26 +1,26 @@
-import React, { useState } from "react";
-import { useDispatch } from "react-redux";
-import { unwrapResult } from "@reduxjs/toolkit";
-import styles from "./AddToDoFrom.module.css";
-import { addNewToDo } from "../toDoListSlice";
-import { Card } from "../../components/Card";
+import React, { useState } from 'react';
+import { useDispatch } from 'react-redux';
+import { unwrapResult } from '@reduxjs/toolkit';
+import styles from './AddToDoFrom.module.css';
+import { addNewToDo } from '../toDoListSlice';
+import Card from '../../components/Card';
 
-export const AddPostForm = () => {
-  const [toDo, setToDo] = useState("");
+const AddPostForm = () => {
+  const [toDo, setToDo] = useState('');
   const dispatch = useDispatch();
 
   const onToDoChanged = (e) => setToDo(e.target.value);
 
-  const canSave = !(typeof toDo === "string" && toDo.trim().length === 0);
+  const canSave = !(typeof toDo === 'string' && toDo.trim().length === 0);
 
   const onSavePostClicked = async () => {
     if (canSave) {
       try {
         const resultAction = await dispatch(addNewToDo(toDo));
         unwrapResult(resultAction);
-        setToDo("");
+        setToDo('');
       } catch (err) {
-        console.error("Failed to save the ToDo: ", err);
+        console.log('Failed to save the ToDo: ', err);
       }
     }
   };
@@ -51,3 +51,5 @@ export const AddPostForm = () => {
     </Card>
   );
 };
+
+export default AddPostForm;

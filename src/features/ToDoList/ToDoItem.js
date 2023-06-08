@@ -1,11 +1,12 @@
-import React from "react";
-import { useDispatch } from "react-redux";
-import { Draggable } from "react-beautiful-dnd";
-import { deleteToDo, completeToDo } from "../toDoListSlice";
+import React from 'react';
+import { useDispatch } from 'react-redux';
+import PropTypes from 'prop-types';
+import { Draggable } from 'react-beautiful-dnd';
+import { deleteToDo, completeToDo } from '../toDoListSlice';
 
-import styles from "./ToDoItem.module.css";
+import styles from './ToDoItem.module.css';
 
-export const ToDoItem = (props) => {
+const ToDoItem = (props) => {
   const dispatch = useDispatch();
 
   return (
@@ -23,8 +24,9 @@ export const ToDoItem = (props) => {
             className={styles.isCompletedCheckBox}
           />
           <div
-            className={`${styles.toDoText} ${props.isCompleted &&
-              styles.crossed}`}
+            className={`${styles.toDoText} ${
+              props.isCompleted && styles.crossed
+            }`}
           >
             {props.text}
           </div>
@@ -40,3 +42,12 @@ export const ToDoItem = (props) => {
     </Draggable>
   );
 };
+
+ToDoItem.propTypes = {
+  id: PropTypes.string.isRequired,
+  text: PropTypes.string.isRequired,
+  isCompleted: PropTypes.bool.isRequired,
+  index: PropTypes.number.isRequired,
+};
+
+export default ToDoItem;

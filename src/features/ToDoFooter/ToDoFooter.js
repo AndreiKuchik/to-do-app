@@ -1,10 +1,11 @@
-import React from "react";
-import { useDispatch } from "react-redux";
-import { ToDoFiltersPanel } from "./ToDoFiltersPanel";
-import { deleteAllCompleted } from "../toDoListSlice";
-import styles from "./ToDoFooter.module.css";
+import { useDispatch } from 'react-redux';
+import React from 'react';
+import PropTypes from 'prop-types';
+import ToDoFiltersPanel from './ToDoFiltersPanel';
+import { deleteAllCompleted } from '../toDoListSlice';
+import styles from './ToDoFooter.module.css';
 
-export const ToDoFooter = ({toDosAmount}) => {
+const ToDoFooter = ({ toDosAmount }) => {
   const dispatch = useDispatch();
 
   return (
@@ -21,3 +22,9 @@ export const ToDoFooter = ({toDosAmount}) => {
     </div>
   );
 };
+
+ToDoFooter.propTypes = {
+  toDosAmount: PropTypes.number,
+};
+
+export default ToDoFooter;
