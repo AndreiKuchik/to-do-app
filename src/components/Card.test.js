@@ -1,16 +1,12 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
-import { Provider } from 'react-redux';
-import App from './App';
-import store from './app/store';
+import Card from './Card';
 
-describe('Jest Snapshot testing suite', () => {
+describe('Testing Card component', () => {
   it('Matches DOM Snapshot', () => {
     const domTree = renderer
       .create(
-        <Provider store={store}>
-          <App />
-        </Provider>,
+          <Card />,
       )
       .toJSON();
     expect(domTree).toMatchSnapshot();

@@ -1,0 +1,97 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Testing AddToDoForm component Matches DOM Snapshot 1`] = `
+<div
+  className="card toDoList"
+>
+  <h3>
+    ToDo list is empty
+  </h3>
+  <div
+    className="footer"
+  >
+    <span>
+      0
+       Item left
+    </span>
+    <div>
+      <button
+        className="filterButton"
+        onClick={[Function]}
+        type="button"
+      >
+        All
+      </button>
+      <button
+        className="filterButton"
+        onClick={[Function]}
+        type="button"
+      >
+        Active
+      </button>
+      <button
+        className="filterButton"
+        onClick={[Function]}
+        type="button"
+      >
+        Completed
+      </button>
+    </div>
+    <button
+      className="completeAllButton"
+      onClick={[Function]}
+      type="button"
+    >
+      Clear Completed
+    </button>
+  </div>
+</div>
+`;
+
+exports[`Testing ToDoList component Matches DOM Snapshot 1`] = `
+<div
+  className="card toDoList"
+>
+  <h3>
+    ToDo list is empty
+  </h3>
+  <div
+    className="footer"
+  >
+    <span>
+      0
+       Item left
+    </span>
+    <div>
+      <button
+        className="filterButton"
+        onClick={[Function]}
+        type="button"
+      >
+        All
+      </button>
+      <button
+        className="filterButton"
+        onClick={[Function]}
+        type="button"
+      >
+        Active
+      </button>
+      <button
+        className="filterButton"
+        onClick={[Function]}
+        type="button"
+      >
+        Completed
+      </button>
+    </div>
+    <button
+      className="completeAllButton"
+      onClick={[Function]}
+      type="button"
+    >
+      Clear Completed
+    </button>
+  </div>
+</div>
+`;

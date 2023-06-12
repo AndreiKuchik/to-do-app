@@ -1,15 +1,15 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
 import { Provider } from 'react-redux';
-import App from './App';
-import store from './app/store';
+import AddToDoForm from './AddToDoForm';
+import store from '../../app/store';
 
-describe('Jest Snapshot testing suite', () => {
+describe('Testing AddToDoForm component', () => {
   it('Matches DOM Snapshot', () => {
     const domTree = renderer
       .create(
         <Provider store={store}>
-          <App />
+          <AddToDoForm />
         </Provider>,
       )
       .toJSON();

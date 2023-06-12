@@ -1,0 +1,35 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Testing AddToDoForm component Matches DOM Snapshot 1`] = `
+<div
+  className="card toDoForm"
+>
+  <form>
+    <div
+      className="newToDoControls"
+    >
+      <div
+        className="newToDoControl"
+      >
+        <input
+          onChange={[Function]}
+          placeholder="Please type your ToDO"
+          type="text"
+          value=""
+        />
+      </div>
+      <div
+        className="newToDoActions"
+      >
+        <button
+          disabled={true}
+          onClick={[Function]}
+          type="button"
+        >
+          Save ToDo
+        </button>
+      </div>
+    </div>
+  </form>
+</div>
+`;

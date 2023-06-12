@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Testing Header component Matches DOM Snapshot 1`] = `
+<header
+  className="todo-image"
+>
+  <img
+    alt="Logo"
+    className="App-logo"
+    src="logo.png"
+  />
+</header>
+`;

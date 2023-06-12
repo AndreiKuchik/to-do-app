@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Testing AddToDoForm component Matches DOM Snapshot 1`] = `
+<div
+  className="card undefined"
+/>
+`;
+
+exports[`Testing Card component Matches DOM Snapshot 1`] = `
+<div
+  className="card undefined"
+/>
+`;

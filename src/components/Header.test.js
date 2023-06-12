@@ -1,16 +1,12 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
-import { Provider } from 'react-redux';
-import App from './App';
-import store from './app/store';
+import Header from './Header';
 
-describe('Jest Snapshot testing suite', () => {
+describe('Testing Header component', () => {
   it('Matches DOM Snapshot', () => {
     const domTree = renderer
       .create(
-        <Provider store={store}>
-          <App />
-        </Provider>,
+          <Header />,
       )
       .toJSON();
     expect(domTree).toMatchSnapshot();
