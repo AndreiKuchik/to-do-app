@@ -1,6 +1,6 @@
 import React from 'react';
 import classes from './Header.module.css';
-import logo from '../logo.png';
+import logo from '../../logo.png';
 
 const Header = () => (
     <header className={classes['todo-image']}>

@@ -1,8 +1,8 @@
 import React from 'react';
-import { useAppDispatch } from '../../core/hooks';
+import { useAppDispatch } from '../../../core/hooks';
 import styles from './ToDoFiltersPanel.module.css';
-import { changeFilter } from '../toDosSlice';
-import Filters from '../../core/filtersEnum';
+import { changeFilter } from '../../toDosSlice';
+import Filters from '../../../core/filtersEnum';
 
 const ToDoFiltersPanel = () => {
   const dispatch = useAppDispatch();

@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { deleteToDo, completeToDo } from '../toDosSlice';
-import { useAppDispatch } from '../../core/hooks';
+import { deleteToDo, completeToDo } from '../../toDosSlice';
+import { useAppDispatch } from '../../../core/hooks';
 
 import styles from './ToDoItem.module.css';
 

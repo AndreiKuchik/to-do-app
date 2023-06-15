@@ -3,7 +3,7 @@ import { unwrapResult } from '@reduxjs/toolkit';
 import { useAppDispatch } from '../../core/hooks';
 import styles from './AddToDoFrom.module.css';
 import { addNewToDo } from '../toDosSlice';
-import Card from '../../components/Card';
+import Card from '../../components/Card/Card';
 
 const AddPostForm = () => {
   const [toDo, setToDo] = useState('');

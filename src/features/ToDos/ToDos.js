@@ -1,13 +1,13 @@
 import React, { useEffect } from 'react';
 import { useAppDispatch, useAppSelector } from '../../core/hooks';
-import Card from '../../components/Card';
+import Card from '../../components/Card/Card';
 import ToDoFooter from '../ToDoFooter/ToDoFooter';
 import { fetchToDoList } from '../toDosSlice';
 import styles from './ToDos.module.css';
-import ToDoList from './ToDoList';
+import ToDoList from './ToDoList/ToDoList';
 import Statuses from '../../core/statusesEnum';
-import ErrorMesssage from '../../components/ErrorMessage';
-import LoadingSpinner from '../../components/LoadingSpinner';
+import ErrorMesssage from '../../components/ErrorMessage/ErrorMessage';
+import LoadingSpinner from '../../components/LoadingSpinner/LoadingSpinner';
 
 const ToDos = () => {
   const dispatch = useAppDispatch();

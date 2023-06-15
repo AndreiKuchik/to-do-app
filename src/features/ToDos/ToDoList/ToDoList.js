@@ -1,12 +1,12 @@
 /* eslint-disable no-shadow */
 import React from 'react';
 import { DragDropContext, Droppable, Draggable } from 'react-beautiful-dnd';
-import { useAppDispatch, useAppSelector } from '../../core/hooks';
-import Card from '../../components/Card';
-import { reorderList } from '../toDosSlice';
-import { selectToDoList } from '../toDosSelectors';
+import { useAppDispatch, useAppSelector } from '../../../core/hooks';
+import Card from '../../../components/Card/Card';
+import { reorderList } from '../../toDosSlice';
+import { selectToDoList } from '../../toDosSelectors';
 import styles from './ToDoList.module.css';
-import ToDoItem from './ToDoItem';
+import ToDoItem from '../ToDoItem/ToDoItem';
 
 const ToDoList = () => {
   const dispatch = useAppDispatch();

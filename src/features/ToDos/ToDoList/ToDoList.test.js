@@ -3,8 +3,8 @@ import { render, screen } from '@testing-library/react';
 import { Provider } from 'react-redux';
 import configureStore from 'redux-mock-store';
 import ToDoList from './ToDoList';
-import Filters from '../../core/filtersEnum';
-import Statuses from '../../core/statusesEnum';
+import Filters from '../../../core/filtersEnum';
+import Statuses from '../../../core/statusesEnum';
 
 const mockStore = configureStore([]);
 
