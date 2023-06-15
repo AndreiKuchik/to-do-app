@@ -45,49 +45,7 @@ exports[`Jest Snapshot testing suite Matches DOM Snapshot 1`] = `
     </form>
   </div>
   <div
-    className="card toDoList"
-  >
-    <h3>
-      ToDo list is empty
-    </h3>
-    <div
-      className="footer"
-    >
-      <span>
-        0
-         Item left
-      </span>
-      <div>
-        <button
-          className="filterButton"
-          onClick={[Function]}
-          type="button"
-        >
-          All
-        </button>
-        <button
-          className="filterButton"
-          onClick={[Function]}
-          type="button"
-        >
-          Active
-        </button>
-        <button
-          className="filterButton"
-          onClick={[Function]}
-          type="button"
-        >
-          Completed
-        </button>
-      </div>
-      <button
-        className="completeAllButton"
-        onClick={[Function]}
-        type="button"
-      >
-        Clear Completed
-      </button>
-    </div>
-  </div>
+    className="card toDos"
+  />
 </div>
 `;

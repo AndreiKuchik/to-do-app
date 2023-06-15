@@ -1,0 +1,24 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ToDoItem component snapshot should be matched 1`] = `
+<div>
+  <input
+    class="isCompletedCheckBox"
+    role="todo-item-checkbox"
+    type="checkbox"
+  />
+  <div
+    class="toDoText false"
+    role="todo-item-text"
+  >
+    ToDo1
+  </div>
+  <button
+    class="deleteButton"
+    role="todo-item-delete-button"
+    type="button"
+  >
+    Delete
+  </button>
+</div>
+`;

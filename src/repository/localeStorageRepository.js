@@ -1,5 +1,3 @@
-import { v4 as uuid } from 'uuid';
-
 const repository = async () => {
   const list = localStorage.getItem('toDoList');
   if (list === null) {
@@ -8,11 +6,9 @@ const repository = async () => {
   return JSON.parse(list);
 };
 
-repository.getAll = function () {
-  return repository();
-};
+repository.getAll = async () => repository();
 
-repository.reorderList = async function ({ dragElementId, dropElementId }) {
+repository.reorderList = async ({ dragElementId, dropElementId }) => {
   let list = await repository();
 
   const updatedList = [...list];
@@ -30,14 +26,14 @@ repository.reorderList = async function ({ dragElementId, dropElementId }) {
   return list;
 };
 
-repository.delete = async function (id) {
+repository.delete = async (id) => {
   const list = await repository();
   const filtaredList = list.filter((obj) => obj.id !== id);
   localStorage.setItem('toDoList', JSON.stringify(filtaredList));
   return id;
 };
 
-repository.complete = async function (id) {
+repository.complete = async (id) => {
   const list = await repository();
 
   const index = list.findIndex((item) => item.id === id);
@@ -49,13 +45,7 @@ repository.complete = async function (id) {
   return id;
 };
 
-repository.addItem = async function (text) {
-  const item = {
-    toDo: text,
-    id: uuid(),
-    isCompleted: false,
-  };
-
+repository.addItem = async (item) => {
   const list = await repository();
   list.push(item);
   localStorage.setItem('toDoList', JSON.stringify(list));
@@ -63,7 +53,7 @@ repository.addItem = async function (text) {
   return item;
 };
 
-repository.deleteAllCompleted = async function () {
+repository.deleteAllCompleted = async () => {
   let list = await repository();
   list = list.filter((todo) => !todo.isCompleted);
   localStorage.setItem('toDoList', JSON.stringify(list));

@@ -1,7 +1,8 @@
 /* eslint-disable no-param-reassign */
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
+import { v4 as uuid } from 'uuid';
 import repository from '../repository/localeStorageRepository';
-import Filters from '../app/filtersEnum';
+import Filters from '../core/filtersEnum';
 
 const initialState = {
   toDoList: [],
@@ -44,7 +45,12 @@ export const completeToDo = createAsyncThunk(
 export const addNewToDo = createAsyncThunk(
   'toDoList/addNeToDo',
   async (initialToDo) => {
-    const response = await repository.addItem(initialToDo);
+    const item = {
+      toDo: initialToDo,
+      id: uuid(),
+      isCompleted: false,
+    };
+    const response = await repository.addItem(item);
     return response;
   },
 );
@@ -66,9 +72,11 @@ const toDoListSlice = createSlice({
   },
   extraReducers: {
     [fetchToDoList.fulfilled]: (state, action) => {
-      state.status = 'loaded';
-
+      state.status = 'succeeded';
       state.toDoList = state.toDoList.concat(action.payload);
+    },
+    [fetchToDoList.pending]: (state) => {
+      state.status = 'loading';
     },
     [deleteToDo.fulfilled]: (state, action) => {
       state.toDoList = state.toDoList.filter(
@@ -107,5 +115,16 @@ export const selectToDoList = (state) => {
       return state.toDoList.toDoList.filter((todo) => todo.isCompleted);
     default:
       return state.toDoList.toDoList;
+  }
+};
+
+export const selectToDoListAmount = (state) => {
+  switch (state.toDoList.filter) {
+    case Filters.Active:
+      return state.toDoList.toDoList.filter((todo) => !todo.isCompleted).length;
+    case Filters.Completed:
+      return state.toDoList.toDoList.filter((todo) => todo.isCompleted).length;
+    default:
+      return state.toDoList.toDoList.length;
   }
 };

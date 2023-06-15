@@ -1,13 +1,13 @@
 import React, { useState } from 'react';
-import { useDispatch } from 'react-redux';
 import { unwrapResult } from '@reduxjs/toolkit';
+import { useAppDispatch } from '../../core/hooks';
 import styles from './AddToDoFrom.module.css';
 import { addNewToDo } from '../toDoListSlice';
 import Card from '../../components/Card';
 
 const AddPostForm = () => {
   const [toDo, setToDo] = useState('');
-  const dispatch = useDispatch();
+  const dispatch = useAppDispatch();
 
   const onToDoChanged = (e) => setToDo(e.target.value);
 

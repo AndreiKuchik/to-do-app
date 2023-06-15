@@ -1,16 +1,17 @@
-import { useDispatch } from 'react-redux';
 import React from 'react';
 import PropTypes from 'prop-types';
+import { useAppDispatch, useAppSelector } from '../../core/hooks';
 import ToDoFiltersPanel from './ToDoFiltersPanel';
-import { deleteAllCompleted } from '../toDoListSlice';
+import { deleteAllCompleted, selectToDoListAmount } from '../toDoListSlice';
 import styles from './ToDoFooter.module.css';
 
-const ToDoFooter = ({ toDosAmount }) => {
-  const dispatch = useDispatch();
+const ToDoFooter = () => {
+  const dispatch = useAppDispatch();
+  const toDoListLenght = useAppSelector(selectToDoListAmount);
 
   return (
     <div className={styles.footer}>
-      <span>{toDosAmount} Item left</span>
+      <span role ='to-do-item-amount'>{toDoListLenght} Item left</span>
       <ToDoFiltersPanel />
       <button
         className={styles.completeAllButton}

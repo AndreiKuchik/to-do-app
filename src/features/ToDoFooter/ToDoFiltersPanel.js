@@ -1,11 +1,11 @@
 import React from 'react';
-import { useDispatch } from 'react-redux';
+import { useAppDispatch } from '../../core/hooks';
 import styles from './ToDoFiltersPanel.module.css';
 import { changeFilter } from '../toDoListSlice';
-import Filters from '../../app/filtersEnum';
+import Filters from '../../core/filtersEnum';
 
 const ToDoFiltersPanel = () => {
-  const dispatch = useDispatch();
+  const dispatch = useAppDispatch();
 
   return (
     <div>
