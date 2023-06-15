@@ -63,6 +63,16 @@ describe('localeStorageRepository', () => {
     ).toEqual(-1);
   });
 
+  it('should set todo item as completed in local storage', async () => {
+    const idToDoItemToComplete = '1';
+    await repository.complete(idToDoItemToComplete);
+
+    const listAfterDeleting = await repository.getAll();
+    const index = listAfterDeleting.findIndex((item) => item.id === idToDoItemToComplete);
+
+    expect(listAfterDeleting[index].isCompleted).toEqual(true);
+  });
+
   it('should delete all completed todos in local storage', async () => {
     await repository.deleteAllCompleted();
     const listAfterDeleting = await repository.getAll();
