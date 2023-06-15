@@ -3,6 +3,7 @@ import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import { v4 as uuid } from 'uuid';
 import repository from '../repository/localeStorageRepository';
 import Filters from '../core/filtersEnum';
+import Statuses from '../core/statusesEnum';
 
 const initialState = {
   toDoList: [],
@@ -72,11 +73,11 @@ const toDoListSlice = createSlice({
   },
   extraReducers: {
     [fetchToDoList.fulfilled]: (state, action) => {
-      state.status = 'succeeded';
+      state.status = Statuses.Succeeded;
       state.toDoList = state.toDoList.concat(action.payload);
     },
     [fetchToDoList.pending]: (state) => {
-      state.status = 'loading';
+      state.status = Statuses.Loading;
     },
     [deleteToDo.fulfilled]: (state, action) => {
       state.toDoList = state.toDoList.filter(
