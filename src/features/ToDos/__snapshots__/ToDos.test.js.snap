@@ -21,8 +21,30 @@ exports[`Test ToDos component should match with snapshot when status is \`loadin
   >
     <p
       class="loading"
+      role="loading-spinner"
     >
-      Loading...
+      <span
+        style="display: inherit; position: relative; font-size: 0px; height: 50px; width: 50px;"
+      >
+        <span
+          style="width: 0px; height: 0px; border-right: 25px solid transparent; border-top: 25px solid transparent; border-left: 25px solid #36d7b7; border-bottom: 25px solid #36d7b7; border-radius: 25px; position: absolute; animation: react-spinners-PacmanLoader-pacman-1 0.8s infinite ease-in-out; animation-fill-mode: both;"
+        />
+        <span
+          style="width: 0px; height: 0px; border-right: 25px solid transparent; border-top: 25px solid #36d7b7; border-left: 25px solid #36d7b7; border-bottom: 25px solid transparent; border-radius: 25px; position: absolute; animation: react-spinners-PacmanLoader-pacman-2 0.8s infinite ease-in-out; animation-fill-mode: both;"
+        />
+        <span
+          style="width: 8.333333333333334px; height: 8.333333333333334px; background-color: rgb(54, 215, 183); margin: 2px; border-radius: 100%; transform: translate(0, -6.25px); position: absolute; top: 25px; left: 100px; animation: react-spinners-PacmanLoader-ball 1s 0.5s infinite linear; animation-fill-mode: both;"
+        />
+        <span
+          style="width: 8.333333333333334px; height: 8.333333333333334px; background-color: rgb(54, 215, 183); margin: 2px; border-radius: 100%; transform: translate(0, -6.25px); position: absolute; top: 25px; left: 100px; animation: react-spinners-PacmanLoader-ball 1s 0.75s infinite linear; animation-fill-mode: both;"
+        />
+        <span
+          style="width: 8.333333333333334px; height: 8.333333333333334px; background-color: rgb(54, 215, 183); margin: 2px; border-radius: 100%; transform: translate(0, -6.25px); position: absolute; top: 25px; left: 100px; animation: react-spinners-PacmanLoader-ball 1s 1s infinite linear; animation-fill-mode: both;"
+        />
+        <span
+          style="width: 8.333333333333334px; height: 8.333333333333334px; background-color: rgb(54, 215, 183); margin: 2px; border-radius: 100%; transform: translate(0, -6.25px); position: absolute; top: 25px; left: 100px; animation: react-spinners-PacmanLoader-ball 1s 1.25s infinite linear; animation-fill-mode: both;"
+        />
+      </span>
     </p>
   </div>
 </div>

@@ -1,12 +1,12 @@
 .toDoText {
   display: inline-block;
   margin-left: 1rem;
-  color: rgb(125 126 137);
+  color: #a3a5b2;
 }
 
 .crossed {
   text-decoration: line-through;
-  color: rgb(125 126 137);
+  color: #36d7b7;
 }
 
 .isCompletedCheckBox {
@@ -22,15 +22,15 @@
 }
 
 .isCompletedCheckBox:checked {
-  background-color: #898181;
+  background-color: #36d7b7;
 }
 
 .deleteButton {
   margin-left: auto;
   cursor: pointer;
   padding: 0.5rem;
-  border: 1px #373537;
-  background-color: #a3a5b2;
+  border: 1px #36d7b7;
+  background-color: #36d7b7;
   color: white;
   border-radius: 12px;
   margin-right: 1rem;

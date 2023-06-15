@@ -20,7 +20,7 @@
   }
   
   .toDoList ul::-webkit-scrollbar-thumb {
-    background-color: #a3a5b2;
+    background-color: #36d7b7;
     outline: 1px solid rgb(237, 237, 234);
     border-radius: 8px;
   }

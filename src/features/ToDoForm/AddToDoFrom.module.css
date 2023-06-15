@@ -6,7 +6,7 @@
     max-width: 95%;
     border-radius: 12px;
     text-align: center;
-    box-shadow: 0 1px 8px rgba(0, 0, 0, 0.25);
+    box-shadow: 0 1px 8px #36d7b7;
 }
 
 .newToDoControls {
@@ -27,6 +27,10 @@
   max-width: 100%;
 }
 
+.newToDoControl input:focus{
+  outline: none;
+}
+
 .newToDoActions {
   text-align: right;
 }
@@ -35,8 +39,8 @@
     font: inherit;
     cursor: pointer;
     padding: 0.5rem;
-    border: 1px #373537;
-    background-color: #a3a5b2;
+    border: 1px #a3a5b2;
+    background-color: #36d7b7;
     color: white;
     border-radius: 12px;
     margin-right: 1rem;

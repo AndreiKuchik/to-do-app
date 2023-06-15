@@ -100,7 +100,6 @@ describe('Test ToDos component', () => {
       </Provider>,
     );
 
-    const errorMessage = screen.getByText('Loading...');
-    expect(errorMessage).toBeInTheDocument();
+    expect(screen.getByRole('loading-spinner')).toBeInTheDocument();
   });
 });
