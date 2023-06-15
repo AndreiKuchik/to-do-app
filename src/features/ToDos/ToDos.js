@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import { useAppDispatch, useAppSelector } from '../../core/hooks';
 import Card from '../../components/Card';
 import ToDoFooter from '../ToDoFooter/ToDoFooter';
-import { fetchToDoList } from '../toDoListSlice';
+import { fetchToDoList } from '../toDosSlice';
 import styles from './ToDos.module.css';
 import ToDoList from './ToDoList';
 import Statuses from '../../core/statusesEnum';

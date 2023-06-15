@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { unwrapResult } from '@reduxjs/toolkit';
 import { useAppDispatch } from '../../core/hooks';
 import styles from './AddToDoFrom.module.css';
-import { addNewToDo } from '../toDoListSlice';
+import { addNewToDo } from '../toDosSlice';
 import Card from '../../components/Card';
 
 const AddPostForm = () => {

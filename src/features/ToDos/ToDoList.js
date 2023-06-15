@@ -3,7 +3,8 @@ import React from 'react';
 import { DragDropContext, Droppable, Draggable } from 'react-beautiful-dnd';
 import { useAppDispatch, useAppSelector } from '../../core/hooks';
 import Card from '../../components/Card';
-import { selectToDoList, reorderList } from '../toDoListSlice';
+import { reorderList } from '../toDosSlice';
+import { selectToDoList } from '../toDosSelectors';
 import styles from './ToDoList.module.css';
 import ToDoItem from './ToDoItem';
 

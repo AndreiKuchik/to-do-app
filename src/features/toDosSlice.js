@@ -1,6 +1,5 @@
 /* eslint-disable no-param-reassign */
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
-import { v4 as uuid } from 'uuid';
 import repository from '../repository/localeStorageRepository';
 import Filters from '../core/filtersEnum';
 import Statuses from '../core/statusesEnum';
@@ -22,8 +21,8 @@ export const fetchToDoList = createAsyncThunk(
 export const reorderList = createAsyncThunk(
   'toDoList/reorderList',
   async (dragAndDropAction) => {
-    const response = await repository.reorderList(dragAndDropAction);
-    return response;
+    await repository.reorderList(dragAndDropAction);
+    return dragAndDropAction;
   },
 );
 
@@ -46,12 +45,7 @@ export const completeToDo = createAsyncThunk(
 export const addNewToDo = createAsyncThunk(
   'toDoList/addNeToDo',
   async (initialToDo) => {
-    const item = {
-      toDo: initialToDo,
-      id: uuid(),
-      isCompleted: false,
-    };
-    const response = await repository.addItem(item);
+    const response = await repository.addItem(initialToDo);
     return response;
   },
 );
@@ -99,7 +93,21 @@ const toDoListSlice = createSlice({
       state.toDoList = state.toDoList.filter((todo) => !todo.isCompleted);
     },
     [reorderList.fulfilled]: (state, action) => {
-      state.toDoList = action.payload;
+      const updatedList = [...state.toDoList];
+      const [reorderedItem] = updatedList.splice(
+        state.toDoList.findIndex(
+          (item) => item.id === action.payload.dragElementId,
+        ),
+        1,
+      );
+      updatedList.splice(
+        state.toDoList.findIndex(
+          (item) => item.id === action.payload.dropElementId,
+        ),
+        0,
+        reorderedItem,
+      );
+      state.toDoList = updatedList;
     },
   },
 });
@@ -107,25 +115,3 @@ const toDoListSlice = createSlice({
 export const { changeFilter } = toDoListSlice.actions;
 
 export default toDoListSlice.reducer;
-
-export const selectToDoList = (state) => {
-  switch (state.toDoList.filter) {
-    case Filters.Active:
-      return state.toDoList.toDoList.filter((todo) => !todo.isCompleted);
-    case Filters.Completed:
-      return state.toDoList.toDoList.filter((todo) => todo.isCompleted);
-    default:
-      return state.toDoList.toDoList;
-  }
-};
-
-export const selectToDoListAmount = (state) => {
-  switch (state.toDoList.filter) {
-    case Filters.Active:
-      return state.toDoList.toDoList.filter((todo) => !todo.isCompleted).length;
-    case Filters.Completed:
-      return state.toDoList.toDoList.filter((todo) => todo.isCompleted).length;
-    default:
-      return state.toDoList.toDoList.length;
-  }
-};

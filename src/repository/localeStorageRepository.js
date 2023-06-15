@@ -1,5 +1,9 @@
+import { v4 as uuid } from 'uuid';
+
+const storeName = 'toDoList';
+
 const repository = async () => {
-  const list = localStorage.getItem('toDoList');
+  const list = localStorage.getItem(storeName);
   if (list === null) {
     return [];
   }
@@ -22,14 +26,13 @@ repository.reorderList = async ({ dragElementId, dropElementId }) => {
     reorderedItem,
   );
   list = updatedList;
-  localStorage.setItem('toDoList', JSON.stringify(list));
-  return list;
+  localStorage.setItem(storeName, JSON.stringify(list));
 };
 
 repository.delete = async (id) => {
   const list = await repository();
   const filtaredList = list.filter((obj) => obj.id !== id);
-  localStorage.setItem('toDoList', JSON.stringify(filtaredList));
+  localStorage.setItem(storeName, JSON.stringify(filtaredList));
   return id;
 };
 
@@ -41,14 +44,19 @@ repository.complete = async (id) => {
     list[index].isCompleted = !list[index].isCompleted;
   }
 
-  localStorage.setItem('toDoList', JSON.stringify(list));
+  localStorage.setItem(storeName, JSON.stringify(list));
   return id;
 };
 
-repository.addItem = async (item) => {
+repository.addItem = async (initialToDo) => {
+  const item = {
+    toDo: initialToDo,
+    id: uuid(),
+    isCompleted: false,
+  };
   const list = await repository();
   list.push(item);
-  localStorage.setItem('toDoList', JSON.stringify(list));
+  localStorage.setItem(storeName, JSON.stringify(list));
 
   return item;
 };
@@ -56,7 +64,7 @@ repository.addItem = async (item) => {
 repository.deleteAllCompleted = async () => {
   let list = await repository();
   list = list.filter((todo) => !todo.isCompleted);
-  localStorage.setItem('toDoList', JSON.stringify(list));
+  localStorage.setItem(storeName, JSON.stringify(list));
 };
 
 export default repository;

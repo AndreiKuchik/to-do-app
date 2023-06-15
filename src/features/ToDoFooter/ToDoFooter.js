@@ -2,7 +2,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { useAppDispatch, useAppSelector } from '../../core/hooks';
 import ToDoFiltersPanel from './ToDoFiltersPanel';
-import { deleteAllCompleted, selectToDoListAmount } from '../toDoListSlice';
+import { deleteAllCompleted } from '../toDosSlice';
+import { selectToDoListAmount } from '../toDosSelectors';
 import styles from './ToDoFooter.module.css';
 
 const ToDoFooter = () => {
