@@ -50,3 +50,8 @@
     align-items: center;
     display: flex;
   }
+  
+  .emptyListMessage {
+    color: #36d7b7;
+    padding: 2rem;
+  }

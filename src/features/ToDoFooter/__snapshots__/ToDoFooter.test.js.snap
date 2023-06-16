@@ -20,12 +20,14 @@ exports[`Testing ToDoFooter component Matches DOM Snapshot 1`] = `
       </button>
       <button
         class="filterButton"
+        role="active-filter-button"
         type="button"
       >
         Active
       </button>
       <button
         class="filterButton"
+        role="completed-filter-button"
         type="button"
       >
         Completed
@@ -33,6 +35,7 @@ exports[`Testing ToDoFooter component Matches DOM Snapshot 1`] = `
     </div>
     <button
       class="completeAllButton"
+      role="clear-completed-button"
       type="button"
     >
       Clear Completed

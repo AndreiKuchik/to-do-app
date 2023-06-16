@@ -17,6 +17,7 @@ const ToDoFooter = () => {
       <button
         className={styles.completeAllButton}
         type="button"
+        role="clear-completed-button"
         onClick={() => dispatch(deleteAllCompleted())}
       >
         Clear Completed

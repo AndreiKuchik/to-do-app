@@ -31,6 +31,7 @@ const AddPostForm = () => {
         <div className={styles.newToDoControls}>
           <div className={styles.newToDoControl}>
             <input
+              className = 'todo-input'
               type="text"
               value={toDo}
               onChange={onToDoChanged}
@@ -39,6 +40,7 @@ const AddPostForm = () => {
           </div>
           <div className={styles.newToDoActions}>
             <button
+            className='submit-todo-input'
               type="button"
               onClick={onSavePostClicked}
               disabled={!canSave}

@@ -79,6 +79,7 @@ exports[`Test TodoList component displays correctly when toDoList is empty 1`] =
     class="card toDoList"
   >
     <h3
+      class="emptyListMessage"
       role="empty-list-text"
     >
       ToDo list is empty

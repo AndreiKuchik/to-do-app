@@ -24,6 +24,7 @@ exports[`Jest Snapshot testing suite Matches DOM Snapshot 1`] = `
           className="newToDoControl"
         >
           <input
+            className="todo-input"
             onChange={[Function]}
             placeholder="Please type your ToDO"
             type="text"
@@ -34,6 +35,7 @@ exports[`Jest Snapshot testing suite Matches DOM Snapshot 1`] = `
           className="newToDoActions"
         >
           <button
+            className="submit-todo-input"
             disabled={true}
             onClick={[Function]}
             type="button"

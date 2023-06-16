@@ -54,7 +54,7 @@ const ToDoList = () => {
         </DragDropContext>
       )}
       {toDoList.length === 0 && (
-        <h3 role="empty-list-text">ToDo list is empty</h3>
+        <h3 className={styles.emptyListMessage} role="empty-list-text">ToDo list is empty</h3>
       )}
     </Card>
   );

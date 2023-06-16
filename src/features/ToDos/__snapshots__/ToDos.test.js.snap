@@ -141,12 +141,14 @@ exports[`Test ToDos component should match with snapshot when status is \`succee
         </button>
         <button
           class="filterButton"
+          role="active-filter-button"
           type="button"
         >
           Active
         </button>
         <button
           class="filterButton"
+          role="completed-filter-button"
           type="button"
         >
           Completed
@@ -154,6 +156,7 @@ exports[`Test ToDos component should match with snapshot when status is \`succee
       </div>
       <button
         class="completeAllButton"
+        role="clear-completed-button"
         type="button"
       >
         Clear Completed

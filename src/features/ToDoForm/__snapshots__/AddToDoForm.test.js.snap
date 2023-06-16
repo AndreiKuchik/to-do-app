@@ -13,6 +13,7 @@ exports[`Testing AddToDoForm component Matches DOM Snapshot 1`] = `
           class="newToDoControl"
         >
           <input
+            class="todo-input"
             placeholder="Please type your ToDO"
             type="text"
             value=""
@@ -22,6 +23,7 @@ exports[`Testing AddToDoForm component Matches DOM Snapshot 1`] = `
           class="newToDoActions"
         >
           <button
+            class="submit-todo-input"
             disabled=""
             type="button"
           >

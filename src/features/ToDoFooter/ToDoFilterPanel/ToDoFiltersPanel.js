@@ -18,6 +18,7 @@ const ToDoFiltersPanel = () => {
       </button>
       <button
         type="button"
+        role="active-filter-button"
         className={styles.filterButton}
         onClick={() => dispatch(changeFilter(Filters.Active))}
       >
@@ -25,6 +26,7 @@ const ToDoFiltersPanel = () => {
       </button>
       <button
         type="button"
+        role="completed-filter-button"
         className={styles.filterButton}
         onClick={() => dispatch(changeFilter(Filters.Completed))}
       >
