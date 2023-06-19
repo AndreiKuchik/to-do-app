@@ -1,0 +1,45 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Testing ToDoFooter component Matches DOM Snapshot 1`] = `
+<div>
+  <div
+    class="footer"
+  >
+    <span
+      role="to-do-item-amount"
+    >
+      4
+       Item left
+    </span>
+    <div>
+      <button
+        class="filterButton"
+        type="button"
+      >
+        All
+      </button>
+      <button
+        class="filterButton"
+        role="active-filter-button"
+        type="button"
+      >
+        Active
+      </button>
+      <button
+        class="filterButton"
+        role="completed-filter-button"
+        type="button"
+      >
+        Completed
+      </button>
+    </div>
+    <button
+      class="completeAllButton"
+      role="clear-completed-button"
+      type="button"
+    >
+      Clear Completed
+    </button>
+  </div>
+</div>
+`;

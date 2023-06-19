@@ -1,0 +1,36 @@
+.toDoText {
+  display: inline-block;
+  margin-left: 1rem;
+  color: #a3a5b2;
+}
+
+.crossed {
+  text-decoration: line-through;
+  color: #36d7b7;
+}
+
+.toDoCheckbox {
+  width: 1.3em;
+  height: 1.3em;
+  border-radius: 60%;
+  background-color: white;
+  vertical-align: middle;
+  border: 1px solid #ddd;
+  appearance: none;
+  cursor: pointer;
+}
+
+.toDoCheckbox:checked {
+  background-color: #36d7b7;
+}
+
+.deleteButton {
+  margin-left: auto;
+  cursor: pointer;
+  padding: 0.5rem;
+  border: 1px #36d7b7;
+  background-color: #36d7b7;
+  color: white;
+  border-radius: 12px;
+  margin-right: 1rem;
+}

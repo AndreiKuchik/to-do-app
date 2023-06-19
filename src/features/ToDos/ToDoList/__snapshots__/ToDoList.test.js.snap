@@ -1,0 +1,89 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Test TodoList component displays correctly when there are items in toDoList 1`] = `
+<div>
+  <div
+    class="card toDoList"
+  >
+    <ul
+      data-rbd-droppable-context-id="0"
+      data-rbd-droppable-id="toDoList"
+    >
+      <li
+        aria-describedby="rbd-hidden-text-0-hidden-text-0"
+        data-rbd-drag-handle-context-id="0"
+        data-rbd-drag-handle-draggable-id="1"
+        data-rbd-draggable-context-id="0"
+        data-rbd-draggable-id="1"
+        draggable="false"
+        role="button"
+        tabindex="0"
+      >
+        <input
+          class="toDoCheckbox"
+          role="todo-item-checkbox"
+          type="checkbox"
+        />
+        <div
+          class="toDoText false"
+          role="todo-item-text"
+        >
+          ToDo1
+        </div>
+        <button
+          class="deleteButton"
+          role="todo-item-delete-button"
+          type="button"
+        >
+          Delete
+        </button>
+      </li>
+      <li
+        aria-describedby="rbd-hidden-text-0-hidden-text-0"
+        data-rbd-drag-handle-context-id="0"
+        data-rbd-drag-handle-draggable-id="2"
+        data-rbd-draggable-context-id="0"
+        data-rbd-draggable-id="2"
+        draggable="false"
+        role="button"
+        tabindex="0"
+      >
+        <input
+          checked=""
+          class="toDoCheckbox"
+          role="todo-item-checkbox"
+          type="checkbox"
+        />
+        <div
+          class="toDoText crossed"
+          role="todo-item-text"
+        >
+          ToDo2
+        </div>
+        <button
+          class="deleteButton"
+          role="todo-item-delete-button"
+          type="button"
+        >
+          Delete
+        </button>
+      </li>
+    </ul>
+  </div>
+</div>
+`;
+
+exports[`Test TodoList component displays correctly when toDoList is empty 1`] = `
+<div>
+  <div
+    class="card toDoList"
+  >
+    <h3
+      class="emptyListMessage"
+      role="empty-list-text"
+    >
+      ToDo list is empty
+    </h3>
+  </div>
+</div>
+`;

@@ -1,0 +1,54 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Jest Snapshot testing suite Matches DOM Snapshot 1`] = `
+<div
+  className="App"
+>
+  <header
+    className="todo-image"
+  >
+    <img
+      alt="Logo"
+      className="App-logo"
+      src="logo.png"
+    />
+  </header>
+  <div
+    className="card toDoForm"
+  >
+    <form
+      onSubmit={[Function]}
+    >
+      <div
+        className="newToDoControls"
+      >
+        <div
+          className="newToDoControl"
+        >
+          <input
+            className="todo-input"
+            onChange={[Function]}
+            placeholder="Please type your Text"
+            type="text"
+            value=""
+          />
+        </div>
+        <div
+          className="newToDoActions"
+        >
+          <button
+            className="submiteButton"
+            disabled={true}
+            type="submit"
+          >
+            Save ToDo
+          </button>
+        </div>
+      </div>
+    </form>
+  </div>
+  <div
+    className="card toDos"
+  />
+</div>
+`;

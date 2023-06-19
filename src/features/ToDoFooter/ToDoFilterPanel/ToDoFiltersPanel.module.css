@@ -1,0 +1,10 @@
+.filterButton {
+  margin-left: auto;
+  cursor: pointer;
+  padding: 0.2rem;
+  border: 1px;
+  background-color: white;
+  color: #36d7b7;
+  border-radius: 12px;
+  margin-right: 1rem;
+}
