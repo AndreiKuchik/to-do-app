@@ -2,6 +2,6 @@
 
 exports[`Testing Card component Matches DOM Snapshot 1`] = `
 <div
-  className="card undefined"
+  className="card"
 />
 `;

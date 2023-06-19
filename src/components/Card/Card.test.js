@@ -4,11 +4,7 @@ import Card from './Card';
 
 describe('Testing Card component', () => {
   it('Matches DOM Snapshot', () => {
-    const domTree = renderer
-      .create(
-          <Card />,
-      )
-      .toJSON();
+    const domTree = renderer.create(<Card />).toJSON();
     expect(domTree).toMatchSnapshot();
   });
 });

@@ -1,9 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import classes from './Card.module.css';
+import classNames from 'classnames';
+import styles from './Card.module.css';
 
 const Card = (props) => (
-    <div className={`${classes.card} ${props.className}`}>{props.children}</div>
+  <div className={classNames(styles.card, props.className)}>
+    {props.children}
+  </div>
 );
 
 Card.propTypes = {

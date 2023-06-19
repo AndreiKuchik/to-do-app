@@ -20,7 +20,7 @@ exports[`Test TodoList component displays correctly when there are items in toDo
         tabindex="0"
       >
         <input
-          class="isCompletedCheckBox"
+          class="toDoCheckbox"
           role="todo-item-checkbox"
           type="checkbox"
         />
@@ -50,7 +50,7 @@ exports[`Test TodoList component displays correctly when there are items in toDo
       >
         <input
           checked=""
-          class="isCompletedCheckBox"
+          class="toDoCheckbox"
           role="todo-item-checkbox"
           type="checkbox"
         />

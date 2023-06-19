@@ -1,9 +1,9 @@
 /* eslint-disable no-shadow */
 import React from 'react';
 import { DragDropContext, Droppable, Draggable } from 'react-beautiful-dnd';
-import { useAppDispatch, useAppSelector } from '../../../core/hooks';
+import { useAppDispatch, useAppSelector } from '../../../app/hooks';
 import Card from '../../../components/Card/Card';
-import { reorderList } from '../../toDosSlice';
+import { reorderList } from '../../toDosActions';
 import { selectToDoList } from '../../toDosSelectors';
 import styles from './ToDoList.module.css';
 import ToDoItem from '../ToDoItem/ToDoItem';
@@ -54,7 +54,9 @@ const ToDoList = () => {
         </DragDropContext>
       )}
       {toDoList.length === 0 && (
-        <h3 className={styles.emptyListMessage} role="empty-list-text">ToDo list is empty</h3>
+        <h3 className={styles.emptyListMessage} role="empty-list-text">
+          ToDo list is empty
+        </h3>
       )}
     </Card>
   );

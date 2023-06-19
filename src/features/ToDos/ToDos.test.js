@@ -3,8 +3,8 @@ import { render, screen } from '@testing-library/react';
 import { Provider } from 'react-redux';
 import configureStore from 'redux-mock-store';
 import ToDos from './ToDos';
-import Statuses from '../../core/statusesEnum';
-import Filters from '../../core/filtersEnum';
+import Statuses from '../../common/requestStatusesEnum';
+import Filters from '../../common/toDoFiltersEnum';
 
 const mockStore = configureStore([]);
 
@@ -84,7 +84,9 @@ describe('Test ToDos component', () => {
       </Provider>,
     );
 
-    const errorMessage = screen.getByText('Something went wrong. Could you please contact administrator.');
+    const errorMessage = screen.getByText(
+      'Something went wrong. Could you please contact administrator.',
+    );
     expect(errorMessage).toBeInTheDocument();
   });
   it('loading message should be displayed when status is `loading`', () => {

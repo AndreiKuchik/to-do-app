@@ -1,18 +1,19 @@
-import reducer, {
+import {
   fetchToDoList,
   deleteToDo,
   completeToDo,
   addNewToDo,
   deleteAllCompleted,
   reorderList,
-} from './toDosSlice';
-import Filters from '../core/filtersEnum';
-import Statuses from '../core/statusesEnum';
+} from './toDosActions';
+import reducer from './toDosSlice';
+import Filters from '../common/toDoFiltersEnum';
+import Statuses from '../common/requestStatusesEnum';
 
 describe('toDoListSlice', () => {
   const initialState = {
     toDoList: [],
-    status: Statuses.Undefined,
+    status: Statuses.Idle,
     filter: Filters.All,
   };
 

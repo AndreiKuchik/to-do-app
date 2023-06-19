@@ -16,7 +16,9 @@ exports[`Jest Snapshot testing suite Matches DOM Snapshot 1`] = `
   <div
     className="card toDoForm"
   >
-    <form>
+    <form
+      onSubmit={[Function]}
+    >
       <div
         className="newToDoControls"
       >
@@ -26,7 +28,7 @@ exports[`Jest Snapshot testing suite Matches DOM Snapshot 1`] = `
           <input
             className="todo-input"
             onChange={[Function]}
-            placeholder="Please type your ToDO"
+            placeholder="Please type your Text"
             type="text"
             value=""
           />
@@ -35,10 +37,9 @@ exports[`Jest Snapshot testing suite Matches DOM Snapshot 1`] = `
           className="newToDoActions"
         >
           <button
-            className="submit-todo-input"
+            className="submiteButton"
             disabled={true}
-            onClick={[Function]}
-            type="button"
+            type="submit"
           >
             Save ToDo
           </button>

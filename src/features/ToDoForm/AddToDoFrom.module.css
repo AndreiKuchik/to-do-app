@@ -1,12 +1,12 @@
-.toDoForm{
-    background-color: #ffffff;
-    padding: 1rem;
-    margin: 1rem auto;
-    width: 50rem;
-    max-width: 95%;
-    border-radius: 12px;
-    text-align: center;
-    box-shadow: 0 1px 8px #36d7b7;
+.toDoForm {
+  background-color: #ffffff;
+  padding: 1rem;
+  margin: 1rem auto;
+  width: 50rem;
+  max-width: 95%;
+  border-radius: 12px;
+  text-align: center;
+  box-shadow: 0 1px 8px #36d7b7;
 }
 
 .newToDoControls {
@@ -27,7 +27,7 @@
   max-width: 100%;
 }
 
-.newToDoControl input:focus{
+.newToDoControl input:focus {
   outline: none;
 }
 
@@ -36,13 +36,12 @@
 }
 
 .newToDoActions button {
-    font: inherit;
-    cursor: pointer;
-    padding: 0.5rem;
-    border: 1px #a3a5b2;
-    background-color: #36d7b7;
-    color: white;
-    border-radius: 12px;
-    margin-right: 1rem;
-  }
-
+  font: inherit;
+  cursor: pointer;
+  padding: 0.5rem;
+  border: 1px #a3a5b2;
+  background-color: #36d7b7;
+  color: white;
+  border-radius: 12px;
+  margin-right: 1rem;
+}

@@ -1,4 +1,5 @@
-import Filters from '../core/filtersEnum';
+import { createSelector } from '@reduxjs/toolkit';
+import Filters from '../common/toDoFiltersEnum';
 
 export const selectToDoList = (state) => {
   switch (state.toDoList.filter) {
@@ -11,13 +12,7 @@ export const selectToDoList = (state) => {
   }
 };
 
-export const selectToDoListAmount = (state) => {
-  switch (state.toDoList.filter) {
-    case Filters.Active:
-      return state.toDoList.toDoList.filter((todo) => !todo.isCompleted).length;
-    case Filters.Completed:
-      return state.toDoList.toDoList.filter((todo) => todo.isCompleted).length;
-    default:
-      return state.toDoList.toDoList.length;
-  }
-};
+export const selectToDoListAmount = createSelector(
+  (state) => selectToDoList(state),
+  (toDoList) => toDoList.length,
+);

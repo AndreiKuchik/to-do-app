@@ -68,7 +68,9 @@ describe('localeStorageRepository', () => {
     await repository.complete(idToDoItemToComplete);
 
     const listAfterDeleting = await repository.getAll();
-    const index = listAfterDeleting.findIndex((item) => item.id === idToDoItemToComplete);
+    const index = listAfterDeleting.findIndex(
+      (item) => item.id === idToDoItemToComplete,
+    );
 
     expect(listAfterDeleting[index].isCompleted).toEqual(true);
   });
@@ -84,7 +86,9 @@ describe('localeStorageRepository', () => {
     await repository.addItem(newToDo);
 
     const listAfterAddition = await repository.getAll();
-    const newItemIdex = listAfterAddition.findIndex((item) => item.toDo === newToDo);
+    const newItemIdex = listAfterAddition.findIndex(
+      (item) => item.toDo === newToDo,
+    );
 
     expect(listAfterAddition[newItemIdex].toDo).toEqual(newToDo);
     expect(listAfterAddition[newItemIdex].isCompleted).toEqual(false);

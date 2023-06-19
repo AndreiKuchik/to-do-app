@@ -9,7 +9,7 @@
   color: #36d7b7;
 }
 
-.isCompletedCheckBox {
+.toDoCheckbox {
   width: 1.3em;
   height: 1.3em;
   border-radius: 60%;
@@ -17,11 +17,10 @@
   vertical-align: middle;
   border: 1px solid #ddd;
   appearance: none;
-  outline: none;
   cursor: pointer;
 }
 
-.isCompletedCheckBox:checked {
+.toDoCheckbox:checked {
   background-color: #36d7b7;
 }
 

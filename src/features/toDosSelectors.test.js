@@ -1,5 +1,5 @@
 import { selectToDoList, selectToDoListAmount } from './toDosSelectors';
-import Filters from '../core/filtersEnum';
+import Filters from '../common/toDoFiltersEnum';
 
 describe('toDosSelectors', () => {
   const state = {
@@ -21,6 +21,7 @@ describe('toDosSelectors', () => {
           isCompleted: true,
         },
       ],
+      filter: Filters.All,
     },
   };
 
@@ -60,21 +61,84 @@ describe('toDosSelectors', () => {
     expect(selectToDoList(state)).toEqual(expectedResult);
   });
 
-  it('should return correct toDoList lenght when search filter is `All`', () => {
-    state.toDoList.filter = Filters.All;
+  it('should return correct toDos count when search filter is `All`', () => {
+    const newState = {
+      toDoList: {
+        toDoList: [
+          {
+            id: '1',
+            toDo: 'ToDo1',
+            isCompleted: false,
+          },
+          {
+            id: '2',
+            toDo: 'ToDo2',
+            isCompleted: true,
+          },
+          {
+            id: '3',
+            toDo: 'ToDo3',
+            isCompleted: true,
+          },
+        ],
+        filter: Filters.All,
+      },
+    };
 
-    expect(selectToDoListAmount(state)).toEqual(state.toDoList.toDoList.length);
+    expect(selectToDoListAmount(newState)).toEqual(3);
   });
 
-  it('should return correct toDoList when search filter is `Active`', () => {
-    state.toDoList.filter = Filters.Active;
+  it('should return correct toDos count when search filter is `Active`', () => {
+    const newState = {
+      toDoList: {
+        toDoList: [
+          {
+            id: '1',
+            toDo: 'ToDo1',
+            isCompleted: false,
+          },
+          {
+            id: '2',
+            toDo: 'ToDo2',
+            isCompleted: true,
+          },
+          {
+            id: '3',
+            toDo: 'ToDo3',
+            isCompleted: true,
+          },
+        ],
+        filter: Filters.Active,
+      },
+    };
 
-    expect(selectToDoListAmount(state)).toEqual(1);
+    expect(selectToDoListAmount(newState)).toEqual(1);
   });
 
-  it('should return correct toDoList when search filter is `Completed`', () => {
-    state.toDoList.filter = Filters.Completed;
+  it('should return correct toDos count when search filter is `Completed`', () => {
+    const newState = {
+      toDoList: {
+        toDoList: [
+          {
+            id: '1',
+            toDo: 'ToDo1',
+            isCompleted: false,
+          },
+          {
+            id: '2',
+            toDo: 'ToDo2',
+            isCompleted: true,
+          },
+          {
+            id: '3',
+            toDo: 'ToDo3',
+            isCompleted: true,
+          },
+        ],
+        filter: Filters.Completed,
+      },
+    };
 
-    expect(selectToDoListAmount(state)).toEqual(2);
+    expect(selectToDoListAmount(newState)).toEqual(2);
   });
 });

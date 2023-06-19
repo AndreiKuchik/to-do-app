@@ -3,7 +3,7 @@
 exports[`ToDoItem component snapshot should be matched 1`] = `
 <div>
   <input
-    class="isCompletedCheckBox"
+    class="toDoCheckbox"
     role="todo-item-checkbox"
     type="checkbox"
   />

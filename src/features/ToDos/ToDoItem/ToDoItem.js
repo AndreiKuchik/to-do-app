@@ -1,33 +1,34 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { deleteToDo, completeToDo } from '../../toDosSlice';
-import { useAppDispatch } from '../../../core/hooks';
+import { deleteToDo, completeToDo } from '../../toDosActions';
+import { useAppDispatch } from '../../../app/hooks';
 
 import styles from './ToDoItem.module.css';
+import Checkbox from '../../../components/Checkbox';
 
-const ToDoItem = (props) => {
+const ToDoItem = ({ id, text, isCompleted }) => {
   const dispatch = useAppDispatch();
+  const checkboxHandler = () => dispatch(completeToDo(id));
 
   return (
     <React.Fragment>
-      <input
+      <Checkbox
         role="todo-item-checkbox"
-        type="checkbox"
-        checked={props.isCompleted}
-        onChange={() => dispatch(completeToDo(props.id))}
-        className={styles.isCompletedCheckBox}
+        isChecked={isCompleted}
+        onCheckBoxChange={checkboxHandler}
+        styles={styles.toDoCheckbox}
       />
       <div
         role="todo-item-text"
-        className={`${styles.toDoText} ${props.isCompleted && styles.crossed}`}
+        className={`${styles.toDoText} ${isCompleted && styles.crossed}`}
       >
-        {props.text}
+        {text}
       </div>
       <button
         type="button"
         role="todo-item-delete-button"
         className={styles.deleteButton}
-        onClick={() => dispatch(deleteToDo(props.id))}
+        onClick={() => dispatch(deleteToDo(id))}
       >
         Delete
       </button>

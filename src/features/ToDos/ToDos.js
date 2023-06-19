@@ -1,11 +1,11 @@
 import React, { useEffect } from 'react';
-import { useAppDispatch, useAppSelector } from '../../core/hooks';
+import { useAppDispatch, useAppSelector } from '../../app/hooks';
 import Card from '../../components/Card/Card';
 import ToDoFooter from '../ToDoFooter/ToDoFooter';
-import { fetchToDoList } from '../toDosSlice';
+import { fetchToDoList } from '../toDosActions';
 import styles from './ToDos.module.css';
 import ToDoList from './ToDoList/ToDoList';
-import Statuses from '../../core/statusesEnum';
+import Statuses from '../../common/requestStatusesEnum';
 import ErrorMesssage from '../../components/ErrorMessage/ErrorMessage';
 import LoadingSpinner from '../../components/LoadingSpinner/LoadingSpinner';
 
@@ -14,7 +14,7 @@ const ToDos = () => {
   const listStatus = useAppSelector((state) => state.toDoList.status);
 
   useEffect(() => {
-    if (listStatus === Statuses.Undefined) {
+    if (listStatus === Statuses.Idle) {
       dispatch(fetchToDoList());
     }
   }, [listStatus, dispatch]);

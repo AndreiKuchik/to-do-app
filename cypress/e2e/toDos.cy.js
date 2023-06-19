@@ -5,29 +5,28 @@ describe('todo application', () => {
   });
   it('should create a todo item in list', () => {
     cy.get('input[class="todo-input"]').type('ToDo 1');
-    cy.get('button[class="submit-todo-input"]').click();
+    cy.get('button[class="submiteButton"]').click();
 
     cy.contains('ToDo 1').should('exist');
   });
 
   it('shouldn disable save button if user didn`t input text', () => {
-    cy.get('button[class="submit-todo-input"]').should('be.disabled');
+    cy.get('button[class="submiteButton"]').should('be.disabled');
     cy.get('h3[role="empty-list-text"]').should('exist');
   });
 
   it('should create 2 todos in list and show correct items amount', () => {
     cy.get('input[class="todo-input"]').type('ToDo 1');
-    cy.get('button[class="submit-todo-input"]').click();
+    cy.get('button[class="submiteButton"]').click();
 
     cy.get('input[class="todo-input"]').type('ToDo 2');
-    cy.get('button[class="submit-todo-input"]').click();
+    cy.get('button[class="submiteButton"]').click();
 
     cy.contains('2 Item left').should('exist');
   });
 
   it('should create 2 todos in list and show correct items amount', () => {
-    cy.get('input[class="todo-input"]').type('ToDo 1');
-    cy.get('button[class="submit-todo-input"]').click();
+    cy.get('input[class="todo-input"]').type('ToDo 1 {enter}');
 
     cy.get('input[role="todo-item-checkbox"]').click();
 
@@ -39,16 +38,14 @@ describe('todo application', () => {
   });
 
   it('should delete todo item from list', () => {
-    cy.get('input[class="todo-input"]').type('ToDo 1');
-    cy.get('button[class="submit-todo-input"]').click();
+    cy.get('input[class="todo-input"]').type('ToDo 1 {enter}');
 
     cy.get('button[role="todo-item-delete-button"]').click();
     cy.get('h3[role="empty-list-text"]').should('exist');
   });
 
   it('should delete completed todo item from list', () => {
-    cy.get('input[class="todo-input"]').type('ToDo 1');
-    cy.get('button[class="submit-todo-input"]').click();
+    cy.get('input[class="todo-input"]').type('ToDo 1 {enter}');
 
     cy.get('input[role="todo-item-checkbox"]').click();
 
@@ -57,12 +54,9 @@ describe('todo application', () => {
   });
 
   it('should add 3 todos, complete 2 of them and delete all completed todos', () => {
-    cy.get('input[class="todo-input"]').type('ToDo 1');
-    cy.get('button[class="submit-todo-input"]').click();
-    cy.get('input[class="todo-input"]').type('ToDo 2');
-    cy.get('button[class="submit-todo-input"]').click();
-    cy.get('input[class="todo-input"]').type('ToDo 3');
-    cy.get('button[class="submit-todo-input"]').click();
+    cy.get('input[class="todo-input"]').type('ToDo 1 {enter}');
+    cy.get('input[class="todo-input"]').type('ToDo 2 {enter}');
+    cy.get('input[class="todo-input"]').type('ToDo 3 {enter}');
 
     cy.get('input[role="todo-item-checkbox"]').eq(0).click();
     cy.get('input[role="todo-item-checkbox"]').eq(1).click();
@@ -77,12 +71,9 @@ describe('todo application', () => {
   });
 
   it('should add 3 todos, complete 1 of them, apply filter `Active`', () => {
-    cy.get('input[class="todo-input"]').type('ToDo 1');
-    cy.get('button[class="submit-todo-input"]').click();
-    cy.get('input[class="todo-input"]').type('ToDo 2');
-    cy.get('button[class="submit-todo-input"]').click();
-    cy.get('input[class="todo-input"]').type('ToDo 3');
-    cy.get('button[class="submit-todo-input"]').click();
+    cy.get('input[class="todo-input"]').type('ToDo 1 {enter}');
+    cy.get('input[class="todo-input"]').type('ToDo 2 {enter}');
+    cy.get('input[class="todo-input"]').type('ToDo 3 {enter}');
 
     cy.get('input[role="todo-item-checkbox"]').eq(0).click();
 
@@ -93,12 +84,9 @@ describe('todo application', () => {
   });
 
   it('should add 3 todos, complete 2 of them, apply filter `Completed`', () => {
-    cy.get('input[class="todo-input"]').type('ToDo 1');
-    cy.get('button[class="submit-todo-input"]').click();
-    cy.get('input[class="todo-input"]').type('ToDo 2');
-    cy.get('button[class="submit-todo-input"]').click();
-    cy.get('input[class="todo-input"]').type('ToDo 3');
-    cy.get('button[class="submit-todo-input"]').click();
+    cy.get('input[class="todo-input"]').type('ToDo 1 {enter}');
+    cy.get('input[class="todo-input"]').type('ToDo 2 {enter}');
+    cy.get('input[class="todo-input"]').type('ToDo 3 {enter}');
 
     cy.get('input[role="todo-item-checkbox"]').eq(0).click();
     cy.get('input[role="todo-item-checkbox"]').eq(1).click();
@@ -110,10 +98,8 @@ describe('todo application', () => {
   });
 
   it('should add 2 todos and apply filter `Completed`', () => {
-    cy.get('input[class="todo-input"]').type('ToDo 1');
-    cy.get('button[class="submit-todo-input"]').click();
-    cy.get('input[class="todo-input"]').type('ToDo 2');
-    cy.get('button[class="submit-todo-input"]').click();
+    cy.get('input[class="todo-input"]').type('ToDo 1 {enter}');
+    cy.get('input[class="todo-input"]').type('ToDo 2 {enter}');
 
     cy.get('button[role="completed-filter-button"]').click();
 
@@ -121,10 +107,8 @@ describe('todo application', () => {
   });
 
   it('should add 2 todos, complete them and apply filter `Active`', () => {
-    cy.get('input[class="todo-input"]').type('ToDo 1');
-    cy.get('button[class="submit-todo-input"]').click();
-    cy.get('input[class="todo-input"]').type('ToDo 2');
-    cy.get('button[class="submit-todo-input"]').click();
+    cy.get('input[class="todo-input"]').type('ToDo 1 {enter}');
+    cy.get('input[class="todo-input"]').type('ToDo 2 {enter}');
 
     cy.get('input[role="todo-item-checkbox"]').eq(0).click();
     cy.get('input[role="todo-item-checkbox"]').eq(1).click();

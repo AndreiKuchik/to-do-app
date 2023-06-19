@@ -73,7 +73,7 @@ exports[`Test ToDos component should match with snapshot when status is \`succee
           tabindex="0"
         >
           <input
-            class="isCompletedCheckBox"
+            class="toDoCheckbox"
             role="todo-item-checkbox"
             type="checkbox"
           />
@@ -103,7 +103,7 @@ exports[`Test ToDos component should match with snapshot when status is \`succee
         >
           <input
             checked=""
-            class="isCompletedCheckBox"
+            class="toDoCheckbox"
             role="todo-item-checkbox"
             type="checkbox"
           />

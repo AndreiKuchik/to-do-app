@@ -6,10 +6,10 @@ import ToDos from './features/ToDos/ToDos';
 
 function App() {
   return (
-    <div className='App'>
-      <Header/>
-      <AddPostForm/>
-      <ToDos/>
+    <div className="App">
+      <Header />
+      <AddPostForm />
+      <ToDos />
     </div>
   );
 }
